@@ -28,7 +28,22 @@ App.js导入路由
 
 pages中写对应的组件
 
-
+## 5.头部组件编写
+### 5.1 头部样式编写
+导航和底部红色的线，为了避免样式冲突，不用普通css而采用styled-components
+>用styled-components创建了一个样式组件，该组件渲染之后是一个div标签。注意组件首字母必须大写不然无法识别。
+```javascript
+/* 创建了一个Wrapper样式组件，该组件渲染之后是一个div标签 */
+  const Wrapper = styled.div`
+    color: blue;
+  `;
+  /* Wrapper组件跟其余的react组件一样，只不过现在他们有了自己的样式 */
+  render(
+    <Wrapper>
+        Hello World!
+    </Wrapper>
+  );
+```
 # 5.导入文件的规范
 第三方
 工具类(网络请求，actionCreater，utils)
