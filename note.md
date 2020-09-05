@@ -29,7 +29,7 @@ App.js导入路由
 pages中写对应的组件
 
 ## 5.头部组件编写
-### 5.1 头部样式编写
+### 5.1 头部布局
 导航和底部红色的线，为了避免样式冲突，不用普通css而采用styled-components
 >用styled-components创建了一个样式组件，该组件渲染之后是一个div标签。注意组件首字母必须大写不然无法识别。
 ```javascript
@@ -44,6 +44,9 @@ pages中写对应的组件
     </Wrapper>
   );
 ```
+### 5.2 头部样式
+```<NavLink to={item.link} exact>```
+exact精准匹配
 # 5.导入文件的规范
 第三方
 工具类(网络请求，actionCreater，utils)
