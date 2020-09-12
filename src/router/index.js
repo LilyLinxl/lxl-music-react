@@ -1,11 +1,20 @@
+import React from 'react'
 import XLAppDiscover from '@/pages/discover'
 import XLAppMine from '@/pages/mine'
 import XLAppFriends from '@/pages/friends'
+import { Redirect } from 'react-router-dom';
 
 const routes = [
     {
         path: '/',
         exact: true,
+        // component: XLAppDiscover
+        render: ()=>(
+            <Redirect to="/discover"/>
+        )
+    },
+    {
+        path: '/discover',
         component: XLAppDiscover
     },
     {
@@ -13,7 +22,7 @@ const routes = [
         component: XLAppMine
     },
     {
-        path: '/friends',
+        path: '/friend',
         component: XLAppFriends
     }
 ];

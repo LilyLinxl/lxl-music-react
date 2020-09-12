@@ -47,8 +47,18 @@ pages中写对应的组件
 ### 5.2 头部样式
 ```<NavLink to={item.link} exact>```
 exact精准匹配
-# 5.导入文件的规范
+## 6.导入文件的规范
 第三方
 工具类(网络请求，actionCreater，utils)
 组件
+# 2.引入redux和redux的补充
+## 1.设置默认路由
+```javaScript
+ path: '/',
+ exact: true,
+ // component: XLAppDiscover 路由会不统一http://localhost:3000/#/
+ render: ()=>(
+     <Redirect to="/discover"/>
+ )
+```
 
