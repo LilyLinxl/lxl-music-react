@@ -67,3 +67,20 @@ exact精准匹配
 ### 2.2 子页面和路由配置
 新建子页面，路由配置，发现页面用renderRoutes渲染路由
 通过props获取route
+### 2.3 处理网络请求数据
+#### 安装axios
+配置网络请求
+#### 引入redux管理数据
+业务数据拿到之后用redux来进行管理。
+
+1.引入依赖
+yarn add redux react-redux redux-thunk
++ react-redux(react组件和redux结合) 比如context，provider共享store
++ redux-thunk 进行异步请求
++ combineReducers 合并reducer(因为业务比较多，所以reducer需要拆分，然后需要插件来合并多个reducer)
++ applyMiddleware 合并中间件
++ 为了让调试工具的redux起作用，还需要使用composeEnhancers包裹applyMiddleware
++ App.js导入Provider，store，这样项目就可以使用共享的store了
+  
+2.存储推荐数据
+定义状态和动作，导出对应的reducer
