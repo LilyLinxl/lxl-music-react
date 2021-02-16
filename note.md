@@ -83,4 +83,15 @@ yarn add redux react-redux redux-thunk
 + App.js导入Provider，store，这样项目就可以使用共享的store了
   
 2.存储推荐数据
-定义状态和动作，导出对应的reducer
++ 1.定义状态和动作，在总reducer文件里导入对应的reducer
++ 2.使用reducer的流程
+  1.使用redux-thunk发起网络请求 
+  2.拿到数据 （dispath(函数）获取数据)
+  3.通过dispatch传入action对象（包含了数据）
+  4.到reducer里面进行数据的合并  这整一个流程都属于集成的redux
+step1：在actionCreator里面写派发的函数(action)
+> 为什么要传入action返回的函数而不是action赋值的函数，因为可能会需要根据传入的参数生成新的函数
+step2: 在action里面写请求数据的方法
+step3: 如何在函数组件使用刚刚的action，使用connect 做一个映射，返回一个高阶组件
+step4: 定义state和dispatch,然后导入需要派发的action，在useEffect中发送异步请求
+step5: 通过另外一个action来存储banners数据到reducer里面
