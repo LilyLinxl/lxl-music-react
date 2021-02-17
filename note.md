@@ -95,3 +95,7 @@ step2: 在action里面写请求数据的方法
 step3: 如何在函数组件使用刚刚的action，使用connect 做一个映射，返回一个高阶组件
 step4: 定义state和dispatch,然后导入需要派发的action，在useEffect中发送异步请求
 step5: 通过另外一个action来存储banners数据到reducer里面
+
++ 3.redux 的hooks来简化组件和redux的关联(获取数据和进行操作)
+  发送网络请求
+  获取存储在reducer里的数据
