@@ -99,3 +99,16 @@ step5: 通过另外一个action来存储banners数据到reducer里面
 + 3.redux 的hooks来简化组件和redux的关联(获取数据和进行操作)
   发送网络请求
   获取存储在reducer里的数据
++ 4.性能优化
+  1.useSelector
+  使用useSelector会出现，组件没有使用某个状态，但是状态改变组件会重新渲染
+  默认做的是全等比较，但是我们希望是做个浅层比较(shallowEqual)
+  {a:aaObj,b:bbObj}
+  如果是全等比较，没有使用aa，bb状态的组件，在aabb改变时组件会重新渲染，state改变后。
+  而浅层比较，不会重新渲染，只是比较key名有没有变化
+  2.reducer里的数据在变化时需要拷贝旧数据，所产生的性能和内存消耗问题
+1) 管理的数据转化为immutable
+  安装 immutable
+  选择map还是fromJS，fromJS进行的深层比较，没有什么必要，所以选择map
+2) combineReducers不能使用Map，因为无法直接获取key值，需要安装新的依赖： redux-immutable,可以
+  把原来的对象转化为immutable对象
