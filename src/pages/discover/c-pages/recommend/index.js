@@ -1,18 +1,11 @@
 import React, { memo, useEffect } from 'react'
-import { useDispatch, useSelector, shallowEqual } from 'react-redux'
-import { getTopBannerAction } from './store/actionCreators'
+import { RecommendWrapper } from './style'
+import LXLTopBanner from './c-cpns/top-banner'
 function XLRecommend() {
-    const {topBanners} = useSelector(state => ({topBanners: state.getIn(["recommend","topBanners"])}), shallowEqual);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getTopBannerAction());
-    }, [dispatch])
-
     return (
-        <div>
-            {topBanners.length}
-        </div>
+        <RecommendWrapper>
+            <LXLTopBanner/>
+        </RecommendWrapper>
     )
 }
 export default memo(XLRecommend);
